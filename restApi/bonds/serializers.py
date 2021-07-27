@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from bonds.models import Bond, User, Purchase
+from bonds.models import Bond, User
 
 
 class RestApiSerializerMixin(object):
@@ -26,10 +26,4 @@ class BondSerializer(RestApiSerializerMixin, serializers.HyperlinkedModelSeriali
 class UserSerializer(RestApiSerializerMixin, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        exclude = ()
-
-
-class PurchaseSerializer(RestApiSerializerMixin, serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Purchase
         exclude = ()
