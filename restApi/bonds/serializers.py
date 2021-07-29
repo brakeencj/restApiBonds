@@ -35,6 +35,7 @@ class UserSerializerSmall(RestApiSerializerMixin,
 
 
 class BondSerializer(RestApiSerializerMixin, serializers.HyperlinkedModelSerializer):
+    """ Serializador de bonos mostrando la relación con la tabla de usuarios """
     seller = UserSerializerSmall(read_only=True)
     sellerId = serializers.PrimaryKeyRelatedField(
         write_only=True, queryset=User.objects.all(), source='seller',
