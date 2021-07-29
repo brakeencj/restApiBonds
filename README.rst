@@ -1,8 +1,10 @@
-# restApiBonds
+============
+restApiBonds
+============
 
-===============================================
+==================================================
 Construyendo APIs con **Django Rest Framework**
-===============================================
+==================================================
 
 Challenge
 =============
@@ -22,6 +24,18 @@ Para ello::
 
 Tras la instalación y configuración el proyecto pasará a estar disponible en
 `localhost en el puerto 8000 <http://localhost:8000/>`_.
+
+Documentación
+=============
+La documentación se puede consultar en la siguiente liga:
+`localhost:8000/redoc <http://localhost:8000/redoc>`_.
+
+Además se pueden hacer pruebas de las consultan en la siguiente liga: 
+`localhost:8000/swagger <http://localhost:8000/swagger>`_.
+
+Para autentificarse ir a la siguiente liga de administración: 
+`localhost:8000/admin <http://localhost:8000/admin>`_.
+
 
 Copyright
 =========
