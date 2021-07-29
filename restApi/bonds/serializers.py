@@ -72,7 +72,6 @@ class BondSerializerUSD(serializers.ModelSerializer):
                 usd = json['bmx']['series'][0]['datos'][0]['dato']
             else:
                 usd = "1"
-            print(usd)
         return format(obj.price * Decimal(usd.replace(',', '.')), '.4f')
 
     class Meta:

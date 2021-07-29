@@ -1,7 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
-from rest_framework.views import APIView
-from rest_framework.decorators import action, api_view
+from rest_framework.decorators import action
 
 
 from bonds.models import Bond, User
@@ -29,21 +28,6 @@ class BondViewSet(viewsets.ModelViewSet):
         bonds = self.get_queryset().filter(status="p")
         serializer = BondSerializerGeneric(bonds, many=True)
         return Response(serializer.data)
-
-
-# @api_view(['GET'])
-# def bond_api_view(request):
-#     if request.method == 'GET':
-#         bonds = Bond.objects.all()
-#         print(bonds)
-#         bond_serializer = BondSerializerUSD(bonds, many=True)
-#         return Response(bond_serializer.data)
-
-# class BondsApiView(APIView):
-#     def get(self, request):
-#         bonds = Bond.objects.all()
-#         bond_serializer = BondSerializerUSD(bonds, many=True)
-#         return Response(bond_serializer.data)
 
 
 class UserViewSet(viewsets.ModelViewSet):

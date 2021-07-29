@@ -1,7 +1,6 @@
 from django.db import models
 from django import forms
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django.utils import timezone
 
 
 class User(models.Model):
