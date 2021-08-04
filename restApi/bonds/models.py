@@ -1,6 +1,6 @@
 from django.db import models
 from django import forms
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MaxValueValidator, MinLengthValidator, MinValueValidator
 
 
 class User(models.Model):
@@ -22,7 +22,8 @@ class Bond(models.Model):
         ('o', 'on sale'),
         ('p', 'purchased')
     )
-    name = forms.CharField(max_length=40, min_length=3)
+    name = models.CharField(max_length=40, validators=[MinLengthValidator(3)],
+                            blank=True, null=True)
     number = models.IntegerField(default=1, validators=[MaxValueValidator(10000),
                                                         MinValueValidator(1)])
     price = models.DecimalField(max_digits=13, decimal_places=4,
