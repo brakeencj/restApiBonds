@@ -18,7 +18,7 @@ Para ello::
     # Instalar dependencias
     pip install -r requirements.txt
     # Crear y rellenar base de datos
-    python manage.py migrate --no-input
+    python manage.py migrate
     # Inicializar el proyecto en modo desarrollo escuchando en puerto 8000
     python manage.py runserver 8000
 
